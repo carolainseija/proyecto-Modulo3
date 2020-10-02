@@ -6,7 +6,6 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-import tableSong from './tableSong';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,9 +17,7 @@ ReactDOM.render(
   age="Edad"
   mail="Email"/>
 
-  <tableSong
-  title="Canciones"
-  />
+  
   
   
   </React.StrictMode>,
