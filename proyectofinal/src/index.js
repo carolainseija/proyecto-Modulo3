@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
+
+import tableSong from './tableSong';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  
+  <App
+  title="USUARIOS"
+  name="Nombre de Usuario"
+  nickName="pellido"
+  age="Edad"
+  mail="Email"/>
+
+  <tableSong
+  title="Canciones"
+  />
+  
+  
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -15,3 +31,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+ 
