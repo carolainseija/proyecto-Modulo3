@@ -11,11 +11,15 @@ ReactDOM.render(
   <React.StrictMode>
   
   <App
-  title="USUARIOS"
+  title="USUARIOS de Mateify"
   name="Nombre de Usuario"
   nickName="pellido"
   age="Edad"
-  mail="Email"/>
+  mail="Email"
+  nameSong="Nombre de la cancion"
+  album="album"
+  artist="artista"
+  duration="duracion"/>
 
   
   
