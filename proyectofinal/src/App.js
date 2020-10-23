@@ -59,20 +59,28 @@ export default function App(props) {
 
   //songs
 
-  const handleAgregarClick = async (user) => {
-    console.log(user);
-    const response = await fetch(
-      "http://localhost:4000/users/:nameUser/:nameSong"
-    );
-    const dataSongs = await response.json();
-    setUsers(dataSongs);
-  };
+  const herMusic = async (user) => {
+    console.log('el usuario que clickeo',user);
+    setSongs(user);
+   alert("usuario que  clickeo:" + " " + user.name);
+     console.log('song one artist:', user.favoriteSongs[0].artist);
+    console.log('album:', user.favoriteSongs[0].album);
 
+  };
+/*
   const handleClick = async (e, usuario) => {
     e.preventDefault();
     console.log("Se hizo click en el usaurio ", usuario);
     setSongs(usuario);
-  };
+  };*/
+  /*const seeUsers = async () => {
+    const response = await fetch("http://localhost:4000/users");
+    const dataUser = await response.json();
+    setUsers(dataUser);
+    console.log('users:', dataUser);
+    console.log('songs:', dataUser[0].favoriteSongs[0].artist);
+
+  };*/
 
   return (
     <div className={classes.root}>
@@ -106,7 +114,7 @@ export default function App(props) {
                     <StyledTableRow key={dataUser._id}>
                       <StyledTableCell component="th" scope="row">
                         {dataUser.name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{" "}
-                        <button onClick={(e) => handleAgregarClick(dataUser)}>
+                        <button onClick={(e) => herMusic(dataUser)}>
                           {" "}
                           <LibraryMusicIcon />
                         </button>
@@ -150,22 +158,23 @@ export default function App(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {songs.map((dataUser) => (
+                  {users.map((dataUser) => (
                     <StyledTableRow key={dataUser._id}>
                       <StyledTableCell component="th" scope="row">
-                        {dataUser.name}
+                        name
                       </StyledTableCell>
                       <StyledTableCell align="left">
-                        {dataUser.favoriteSongs.album}
+                      album
                       </StyledTableCell>
                       <StyledTableCell align="left">
-                        {dataUser.favoriteSongs.duration}
+                       {dataUser.favoriteSongs.duration}
+                        duracion
                       </StyledTableCell>
                       <StyledTableCell align="left">
-                        {dataUser.favoriteSongs.artist}
+                       etc
                       </StyledTableCell>
                     </StyledTableRow>
-                  ))}
+                 ))}
                 </TableBody>
               </Table>
             </TableContainer>
